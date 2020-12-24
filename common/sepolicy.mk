@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from Arrow
+# inherit from DU
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -10,20 +10,20 @@ endif
 endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/arrow/sepolicy/common/public
+    device/du/sepolicy/common/public
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/arrow/sepolicy/common/private
+    device/du/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/arrow/sepolicy/common/dynamic \
-    device/arrow/sepolicy/common/system
+    device/du/sepolicy/common/dynamic \
+    device/du/sepolicy/common/system
 else
 BOARD_SEPOLICY_DIRS += \
-    device/arrow/sepolicy/common/dynamic \
-    device/arrow/sepolicy/common/vendor
+    device/du/sepolicy/common/dynamic \
+    device/du/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/arrow/sepolicy/legacy-common/sepolicy.mk
+-include device/du/sepolicy/legacy-common/sepolicy.mk

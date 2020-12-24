@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all qcom products
-# that inherit from Arrow
+# that inherit from DU
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -10,14 +10,14 @@ endif
 endif
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/arrow/sepolicy/qcom/private
+    device/du/sepolicy/qcom/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/arrow/sepolicy/qcom/dynamic \
-    device/arrow/sepolicy/qcom/system
+    device/du/sepolicy/qcom/dynamic \
+    device/du/sepolicy/qcom/system
 else
 BOARD_SEPOLICY_DIRS += \
-    device/arrow/sepolicy/qcom/dynamic \
-    device/arrow/sepolicy/qcom/vendor
+    device/du/sepolicy/qcom/dynamic \
+    device/du/sepolicy/qcom/vendor
 endif
